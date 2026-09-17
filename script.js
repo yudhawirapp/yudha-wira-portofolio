@@ -1,0 +1,1 @@
+const b=document.getElementById('lang');let en=false;b.onclick=()=>{en=!en;b.textContent=en?'ID':'EN';document.querySelector('html').lang=en?'en':'id';document.querySelectorAll('nav a').forEach((a,i)=>a.textContent=(en?['About','Expertise','Projects','Certifications','Contact']:['Tentang','Keahlian','Proyek','Sertifikasi','Kontak'])[i]);};
