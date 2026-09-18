@@ -1,1 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap');*{box-sizing:border-box}body{margin:0;background:#0b0d10;color:#f3f4f6;font:16px/1.6 'DM Sans',sans-serif}header{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:22px 6%;background:#0b0d10ee;border-bottom:1px solid #29303a}.logo{font:700 28px 'Space Grotesk';color:#fff;text-decoration:none}.logo span,small,em{color:#c8ff63}nav{display:flex;gap:22px}nav a{color:#a3abb5;text-decoration:none;font-size:13px}button{background:none;border:1px solid #29303a;color:#fff;border-radius:20px;padding:6px 12px}.hero,section{max-width:1180px;margin:auto;padding:90px 6%;border-bottom:1px solid #29303a}.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.hero h1{font:700 clamp(65px,10vw,125px)/.9 'Space Grotesk';letter-spacing:-5px;margin:25px 0}.role{font-size:18px}.hero p,section>p,article p{color:#a3abb5}.hero img{width:100%;height:520px;object-fit:cover}.btn{display:inline-block;background:#c8ff63;color:#111;padding:12px 20px;text-decoration:none;font-weight:700;margin-top:18px}h2{font:700 clamp(34px,5vw,62px)/1.1 'Space Grotesk';max-width:850px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid article{background:#12161b;border:1px solid #29303a;padding:25px}.list article{padding:24px 0;border-bottom:1px solid #29303a}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gallery img{width:100%;height:240px;object-fit:cover}footer{padding:30px 6%;color:#a3abb5}@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr}.grid,.gallery{grid-template-columns:1fr}.hero img{height:400px}}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap');*{box-sizing:border-box}body{margin:0;background:#0b0d10;color:#f3f4f6;font:16px/1.6 'DM Sans',sans-serif}header{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:22px 6%;background:#0b0d10ee;border-bottom:1px solid #29303a}.logo{font:700 28px 'Space Grotesk';color:#fff;text-decoration:none}.logo span,small,em{color:#c8ff63}nav{display:flex;gap:22px}nav a{color:#a3abb5;text-decoration:none;font-size:13px}button{background:none;border:1px solid #29303a;color:#fff;border-radius:20px;padding:6px 12px}.hero,section{max-width:1180px;margin:auto;padding:90px 6%;border-bottom:1px solid #29303a}.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.hero h1{font:700 clamp(65px,10vw,125px)/.9 'Space Grotesk';letter-spacing:-5px;margin:25px 0}.role{font-size:18px}.hero p,section>p,article p{color:#a3abb5}.hero img{width:100%;height:520px;object-fit:cover}.btn{display:inline-block;background:#c8ff63;color:#111;padding:12px 20px;text-decoration:none;font-weight:700;margin-top:18px}h2{font:700 clamp(34px,5vw,62px)/1.1 'Space Grotesk';max-width:850px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid article{background:#12161b;border:1px solid #29303a;padding:25px}.list article{padding:24px 0;border-bottom:1px solid #29303a}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gallery img{width:100%;height:240px;object-fit:cover}footer{padding:30px 6%;color:#a3abb5}@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr}.grid,.gallery{grid-template-columns:1fr}.hero img{height:400px}}/* MOBILE OPTIMIZATION */
+@media (max-width: 800px) {
+  header {
+    padding: 16px 6%;
+  }
+
+  .hero,
+  section {
+    padding: 48px 6%;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 14vw, 72px);
+    letter-spacing: -2px;
+    margin: 18px 0;
+  }
+
+  .role {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .grid,
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .grid article {
+    padding: 20px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 20px;
+    text-align: center;
+  }
+}
