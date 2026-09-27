@@ -10,16 +10,16 @@ const translations={
    '#about h2':'Berpengalaman, adaptif, dan selalu siap belajar.',
    '#about p':'Saya Yudha Wira, profesional multidisiplin di bidang pelatihan, asesmen kompetensi, public relations, MICE, dan aktivitas petualangan. Saya menggabungkan keahlian teknis, komunikasi, keselamatan, dan pengembangan sumber daya manusia.',
    '#skills small':'02 / KEAHLIAN',
-   '#skills .grid article:nth-child(1) p':'Professional Trainer, Master Trainer, Workplacement Assessor, dan Asesor Kompetensi.',
+   '#skills .grid article:nth-child(1) h3':'Pelatihan & Asesmen',\n   '#skills .grid article:nth-child(2) h3':'Hubungan Masyarakat & MICE',\n   '#skills .grid article:nth-child(3) h3':'Akses Tali & Petualangan',\n   '#skills .grid article:nth-child(1) p':'Professional Trainer, Master Trainer, Workplacement Assessor, dan Asesor Kompetensi.',
    '#skills .grid article:nth-child(2) p':'Komunikasi, koordinasi, event support, dan pengelolaan kegiatan.',
    '#skills .grid article:nth-child(3) p':'Rope Access Technician, Professional Guide, Caver, dan Canyoner.',
    '#projects small':'03 / PROYEK TERPILIH',
-   '#projects>.gallery-intro':'Pilihan pengalaman dan proyek. Buka dokumentasi foto terkait melalui galeri.',
+   '#projects>.gallery-intro':'Pilihan pengalaman dan proyek. Buka dokumentasi foto terkait melalui galeri.',\n   '#projects article:nth-child(1) h3':'Pemasangan Giant Banner',\n   '#projects article:nth-child(2) h3':'Pengembangan Pelatihan & Kompetensi',\n   '#projects article:nth-child(3) h3':'Petualangan Canyoning – Bali',
    '#projects article:nth-child(1) .btn':'Lihat Foto Proyek',
    '#projects article:nth-child(2) .btn':'Lihat Foto Training',
    '#projects article:nth-child(3) .btn':'Lihat Foto Adventure',
    '#certs small':'04 / PELATIHAN & SERTIFIKASI',
-   '#certs>.gallery-intro':'Dokumen sertifikasi dikelompokkan berdasarkan penerbit dan bidang kompetensi.',
+   '#certs>.gallery-intro':'Dokumen sertifikasi dikelompokkan berdasarkan penerbit dan bidang kompetensi.',\n   '#certs article:nth-child(1) h3':'Workplacement & Kompetensi',\n   '#certs article:nth-child(2) h3':'Pelatih & Instruktur',\n   '#certs article:nth-child(3) h3':'Outdoor & Petualangan',\n   '#certs article:nth-child(4) h3':'Sertifikat Lainnya',
    '#certs article:nth-child(1) p':'Sertifikat BNSP untuk asesmen dan kompetensi profesional.',
    '#certs article:nth-child(2) p':'Sertifikat pelatihan dan instruktur dari Midiatama, SKM, serta Pengawasan K3 Bekerja di Ketinggian.',
    '#certs article:nth-child(3) p':'Sertifikat instruktur dan kompetensi kegiatan outdoor dan petualangan.',
@@ -63,16 +63,16 @@ const translations={
    '#about h2':'Experienced, adaptable, and always ready to learn.',
    '#about p':'I am Yudha Wira, a multidisciplinary professional in training, competency assessment, public relations, MICE, and adventure activities. I combine technical expertise, communication, safety, and human resource development.',
    '#skills small':'02 / EXPERTISE',
-   '#skills .grid article:nth-child(1) p':'Professional Trainer, Master Trainer, Workplacement Assessor, and Competency Assessor.',
+   '#skills .grid article:nth-child(1) h3':'Training & Assessment',\n   '#skills .grid article:nth-child(2) h3':'Public Relations & MICE',\n   '#skills .grid article:nth-child(3) h3':'Rope Access & Adventure',\n   '#skills .grid article:nth-child(1) p':'Professional Trainer, Master Trainer, Workplacement Assessor, and Competency Assessor.',
    '#skills .grid article:nth-child(2) p':'Communication, coordination, event support, and event management.',
    '#skills .grid article:nth-child(3) p':'Rope Access Technician, Professional Guide, Caver, and Canyoner.',
    '#projects small':'03 / SELECTED PROJECTS',
-   '#projects>.gallery-intro':'Selected experience and projects. Explore related photo documentation in the gallery.',
+   '#projects>.gallery-intro':'Selected experience and projects. Explore related photo documentation in the gallery.',\n   '#projects article:nth-child(1) h3':'Giant Banner Installation',\n   '#projects article:nth-child(2) h3':'Training & Competency Development',\n   '#projects article:nth-child(3) h3':'Canyoning Adventure – Bali',
    '#projects article:nth-child(1) .btn':'View Project Photos',
    '#projects article:nth-child(2) .btn':'View Training Photos',
    '#projects article:nth-child(3) .btn':'View Adventure Photos',
    '#certs small':'04 / TRAINING & CERTIFICATIONS',
-   '#certs>.gallery-intro':'Certificates are grouped by issuing organization and competency area.',
+   '#certs>.gallery-intro':'Certificates are grouped by issuing organization and competency area.',\n   '#certs article:nth-child(1) h3':'Workplacement & Competency',\n   '#certs article:nth-child(2) h3':'Trainer & Instructor',\n   '#certs article:nth-child(3) h3':'Outdoor & Adventure',\n   '#certs article:nth-child(4) h3':'Other Certificates',
    '#certs article:nth-child(1) p':'BNSP certificates for assessment and professional competency.',
    '#certs article:nth-child(2) p':'Training and instructor certificates from Midiatama, SKM, and work-at-height safety supervision.',
    '#certs article:nth-child(3) p':'Instructor and competency certificates for outdoor and adventure activities.',
@@ -299,7 +299,7 @@ const certificateViewerClose=document.getElementById('certificateViewerClose');
 document.querySelectorAll('.cert-viewer-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const group=certificateGroups[btn.dataset.certGroup];
-    certificateViewerTitle.textContent=group.title;
+    certificateViewerTitle.textContent=en?group.title:(group.title.replace('Certificates','Sertifikat').replace('Workplacement & Competency','Workplacement & Kompetensi').replace('Trainer & Instructor','Pelatih & Instruktur').replace('Outdoor & Adventure','Outdoor & Petualangan').replace('Other','Lainnya'));
     certificateViewerContent.innerHTML=group.files.length?group.files.map(([title,file])=>'<article class="certificate-frame"><h3>'+title+'</h3><iframe src="'+file+'" title="'+title+'" loading="lazy"></iframe></article>').join(''):'<p class="cert-note">Belum ada dokumen pada kategori ini.</p>';
     certificateViewer.classList.add('open');
     certificateViewer.setAttribute('aria-hidden','false');
