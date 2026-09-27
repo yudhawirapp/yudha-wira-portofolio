@@ -1,7 +1,7 @@
 const b=document.getElementById('lang');let en=false;
 const labels={
- id:['Tentang','Keahlian','Proyek','Sertifikasi','Galeri','Kontak'],
- en:['About','Expertise','Projects','Certifications','Gallery','Contact']
+ id:['Tentang','Keahlian','Proyek','Sertifikasi','Galeri','Testimoni','Kontak'],
+ en:['About','Expertise','Projects','Certifications','Gallery','Testimony','Contact']
 };
 b.onclick=()=>{en=!en;b.textContent=en?'ID':'EN';document.documentElement.lang=en?'en':'id';document.querySelectorAll('nav a').forEach((a,i)=>a.textContent=labels[en?'en':'id'][i]);};
 
