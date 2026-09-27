@@ -128,9 +128,11 @@
   <div class="testimonial-placeholder"><span>TESTIMONI</span><p>Testimoni yang dikirim akan ditinjau terlebih dahulu sebelum ditampilkan di website.</p></div>
   <div class="testimonial-invite">
     <div><strong>Pernah bekerja sama dengan Yudha?</strong><p>Bagikan pengalaman Anda. Cukup isi formulir singkat di bawah ini.</p></div>
-    <a class="btn testimonial-cta" href="#testimonial-form">Tulis Testimoni <span aria-hidden="true">↓</span></a>
+    <button class="btn testimonial-cta" id="openTestimonialForm" type="button">Tulis Testimoni <span aria-hidden="true">↗</span></button>
   </div>
-  <div id="testimonial-form" class="testimonial-form-wrap">
+  <div id="testimonial-form" class="testimonial-form-wrap" aria-hidden="true">
+    <div class="testimonial-form-panel">
+    <button class="testimonial-form-close" id="closeTestimonialForm" type="button" aria-label="Tutup">×</button>
     <h3>Bagikan pengalaman Anda</h3>
     <p class="form-note">Isi formulir berikut. Testimoni Anda akan dikirim kepada Yudha untuk ditinjau dan tidak langsung dipublikasikan.</p>
     <form class="testimonial-form" action="https://formsubmit.co/yudhawira@gmail.com" method="POST">
@@ -151,6 +153,7 @@
       <label class="testimonial-consent"><input type="checkbox" name="Persetujuan publikasi" value="Saya menyetujui testimoni ini ditampilkan setelah ditinjau." required> Saya menyetujui testimoni ini ditampilkan di website setelah ditinjau. *</label>
       <button class="btn" type="submit">Kirim Testimoni</button>
     </form>
+    </div>
   </div>
 </section>
 <section id="contact">
