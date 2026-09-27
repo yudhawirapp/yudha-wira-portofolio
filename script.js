@@ -51,8 +51,8 @@ b.addEventListener('click',()=>{en=!en;setLanguage();});
 setLanguage();
 
 const testimonialFormModal=document.getElementById('testimonial-form');
-const openTestimonialForm=()=>{testimonialFormModal.classList.add('open');testimonialFormModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('testimonial-name').focus();};
-const closeTestimonialForm=()=>{testimonialFormModal.classList.remove('open');testimonialFormModal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+const openTestimonialForm=()=>{testimonialFormModal.hidden=false;testimonialFormModal.classList.add('open');testimonialFormModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('testimonial-name').focus();};
+const closeTestimonialForm=()=>{testimonialFormModal.classList.remove('open');testimonialFormModal.setAttribute('aria-hidden','true');testimonialFormModal.hidden=true;document.body.style.overflow='';};
 document.getElementById('openTestimonialForm').addEventListener('click',openTestimonialForm);
 document.getElementById('closeTestimonialForm').addEventListener('click',closeTestimonialForm);
 testimonialFormModal.addEventListener('click',e=>{if(e.target===testimonialFormModal)closeTestimonialForm();});
