@@ -1,9 +1,134 @@
 const b=document.getElementById('lang');let en=false;
-const labels={
- id:['Tentang','Keahlian','Proyek','Sertifikasi','Galeri','Testimoni','Kontak'],
- en:['About','Expertise','Projects','Certifications','Gallery','Testimony','Contact']
+const translations={
+ id:{
+  nav:['Tentang','Keahlian','Proyek','Sertifikasi','Galeri','Testimoni','Kontak'],
+  text:{
+   '.hero small':'PROFESIONAL MULTIDISIPLIN',
+   '.hero div>p:not(.role)':'25 tahun pengalaman dalam pelatihan, asesmen kompetensi, komunikasi, event, dan aktivitas petualangan.',
+   '.hero .btn':'Lihat Portofolio',
+   '#about small':'01 / TENTANG SAYA',
+   '#about h2':'Berpengalaman, adaptif, dan selalu siap belajar.',
+   '#about p':'Saya Yudha Wira, profesional multidisiplin di bidang pelatihan, asesmen kompetensi, public relations, MICE, dan aktivitas petualangan. Saya menggabungkan keahlian teknis, komunikasi, keselamatan, dan pengembangan sumber daya manusia.',
+   '#skills small':'02 / KEAHLIAN',
+   '#skills .grid article:nth-child(1) p':'Professional Trainer, Master Trainer, Workplacement Assessor, dan Asesor Kompetensi.',
+   '#skills .grid article:nth-child(2) p':'Komunikasi, koordinasi, event support, dan pengelolaan kegiatan.',
+   '#skills .grid article:nth-child(3) p':'Rope Access Technician, Professional Guide, Caver, dan Canyoner.',
+   '#projects small':'03 / PROYEK TERPILIH',
+   '#projects>.gallery-intro':'Pilihan pengalaman dan proyek. Buka dokumentasi foto terkait melalui galeri.',
+   '#projects article:nth-child(1) .btn':'Lihat Foto Proyek',
+   '#projects article:nth-child(2) .btn':'Lihat Foto Training',
+   '#projects article:nth-child(3) .btn':'Lihat Foto Adventure',
+   '#certs small':'04 / PELATIHAN & SERTIFIKASI',
+   '#certs>.gallery-intro':'Dokumen sertifikasi dikelompokkan berdasarkan penerbit dan bidang kompetensi.',
+   '#certs article:nth-child(1) p':'Sertifikat BNSP untuk asesmen dan kompetensi profesional.',
+   '#certs article:nth-child(2) p':'Sertifikat pelatihan dan instruktur dari Midiatama, SKM, serta Pengawasan K3 Bekerja di Ketinggian.',
+   '#certs article:nth-child(3) p':'Sertifikat instruktur dan kompetensi kegiatan outdoor dan petualangan.',
+   '#certs article:nth-child(4) p':'Sertifikat lain yang belum termasuk dalam tiga kategori di atas.',
+   '#gallery small':'05 / GALERI',
+   '#gallery h2':'25 Years. Many Experiences. One Journey.',
+   '#gallery>.gallery-intro':'Kumpulan dokumentasi profesional, training, rope access, adventure, project, dan certification.',
+   '#galleryEmpty':'Tidak ada foto untuk kategori ini.',
+   '.media-note':'Foto diambil langsung dari folder images di repository GitHub. File asli tidak dipindahkan atau diubah namanya.',
+   '#testimonials small':'06 / TESTIMONI',
+   '#testimonials h2':'Pengalaman dan kepercayaan.',
+   '#testimonials>.gallery-intro':'Testimoni dari klien, peserta pelatihan, dan mitra kerja akan ditampilkan di sini setelah melalui proses moderasi.',
+   '.testimonial-placeholder p':'Testimoni yang dikirim akan ditinjau terlebih dahulu sebelum ditampilkan di website.',
+   '.testimonial-invite strong':'Pernah bekerja sama dengan Yudha?',
+   '.testimonial-invite p':'Bagikan pengalaman Anda. Cukup isi formulir singkat di bawah ini.',
+   '.testimonial-cta':'Tulis Testimoni ↓',
+   '.testimonial-form-wrap h3':'Bagikan pengalaman Anda',
+   '.form-note':'Isi formulir berikut. Testimoni Anda akan dikirim kepada Yudha untuk ditinjau dan tidak langsung dipublikasikan.',
+   'label[for="testimonial-name"]':'Nama *',
+   'label[for="testimonial-role"]':'Jabatan / Organisasi (opsional)',
+   'label[for="testimonial-relation"]':'Hubungan dengan Yudha *',
+   'label[for="testimonial-message"]':'Testimoni *',
+   '.testimonial-consent':'Saya menyetujui testimoni ini ditampilkan di website setelah ditinjau. *',
+   '.testimonial-form button':'Kirim Testimoni',
+   '#contact small':'07 / KONTAK',
+   '#contact h2':'Mari terhubung untuk peluang, kolaborasi, dan proyek berikutnya.',
+   '#contact>.btn':'Kirim Email'
+  },
+  filters:['ALL','ROPE ACCESS','TRAINING','ADVENTURE','PROJECT','CERTIFICATION'],
+  certButtons:['Lihat Sertifikat','Lihat Sertifikat','Lihat Sertifikat','Lihat Sertifikat'],
+  relation:['Pilih salah satu','Klien','Peserta pelatihan','Rekan kerja','Mitra kerja','Lainnya'],
+  placeholders:['Nama Anda','Contoh: HR Manager · PT ABC','Ceritakan pengalaman Anda bekerja atau berkolaborasi dengan Yudha...']
+ },
+ en:{
+  nav:['About','Expertise','Projects','Certifications','Gallery','Testimony','Contact'],
+  text:{
+   '.hero small':'MULTIDISCIPLINARY PROFESSIONAL',
+   '.hero div>p:not(.role)':'25 years of experience in training, competency assessment, communications, events, and adventure activities.',
+   '.hero .btn':'View Portfolio',
+   '#about small':'01 / ABOUT ME',
+   '#about h2':'Experienced, adaptable, and always ready to learn.',
+   '#about p':'I am Yudha Wira, a multidisciplinary professional in training, competency assessment, public relations, MICE, and adventure activities. I combine technical expertise, communication, safety, and human resource development.',
+   '#skills small':'02 / EXPERTISE',
+   '#skills .grid article:nth-child(1) p':'Professional Trainer, Master Trainer, Workplacement Assessor, and Competency Assessor.',
+   '#skills .grid article:nth-child(2) p':'Communication, coordination, event support, and event management.',
+   '#skills .grid article:nth-child(3) p':'Rope Access Technician, Professional Guide, Caver, and Canyoner.',
+   '#projects small':'03 / SELECTED PROJECTS',
+   '#projects>.gallery-intro':'Selected experience and projects. Explore related photo documentation in the gallery.',
+   '#projects article:nth-child(1) .btn':'View Project Photos',
+   '#projects article:nth-child(2) .btn':'View Training Photos',
+   '#projects article:nth-child(3) .btn':'View Adventure Photos',
+   '#certs small':'04 / TRAINING & CERTIFICATIONS',
+   '#certs>.gallery-intro':'Certificates are grouped by issuing organization and competency area.',
+   '#certs article:nth-child(1) p':'BNSP certificates for assessment and professional competency.',
+   '#certs article:nth-child(2) p':'Training and instructor certificates from Midiatama, SKM, and work-at-height safety supervision.',
+   '#certs article:nth-child(3) p':'Instructor and competency certificates for outdoor and adventure activities.',
+   '#certs article:nth-child(4) p':'Other certificates not included in the three categories above.',
+   '#gallery small':'05 / GALLERY',
+   '#gallery h2':'25 Years. Many Experiences. One Journey.',
+   '#gallery>.gallery-intro':'A collection of professional, training, rope access, adventure, project, and certification documentation.',
+   '#galleryEmpty':'No photos in this category.',
+   '.media-note':'Photos are loaded directly from the images folder in the GitHub repository. Original files are not moved or renamed.',
+   '#testimonials small':'06 / TESTIMONIALS',
+   '#testimonials h2':'Experience and trust.',
+   '#testimonials>.gallery-intro':'Testimonials from clients, trainees, and partners will appear here after moderation.',
+   '.testimonial-placeholder p':'Submitted testimonials will be reviewed before they are displayed on the website.',
+   '.testimonial-invite strong':'Have you worked with Yudha?',
+   '.testimonial-invite p':'Share your experience. Simply complete the short form below.',
+   '.testimonial-cta':'Write a Testimonial ↓',
+   '.testimonial-form-wrap h3':'Share your experience',
+   '.form-note':'Complete the form below. Your testimonial will be sent to Yudha for review and will not be published immediately.',
+   'label[for="testimonial-name"]':'Name *',
+   'label[for="testimonial-role"]':'Position / Organization (optional)',
+   'label[for="testimonial-relation"]':'Your relationship with Yudha *',
+   'label[for="testimonial-message"]':'Testimonial *',
+   '.testimonial-consent':'I agree that this testimonial may be displayed on the website after review. *',
+   '.testimonial-form button':'Submit Testimonial',
+   '#contact small':'07 / CONTACT',
+   '#contact h2':'Let’s connect for opportunities, collaboration, and future projects.',
+   '#contact>.btn':'Send Email'
+  },
+  filters:['ALL','ROPE ACCESS','TRAINING','ADVENTURE','PROJECT','CERTIFICATION'],
+  certButtons:['View Certificates','View Certificates','View Certificates','View Certificates'],
+  relation:['Select one','Client','Trainee','Colleague','Business partner','Other'],
+  placeholders:['Your name','e.g., HR Manager · ABC Company','Tell us about your experience working or collaborating with Yudha...']
+ }
 };
-b.onclick=()=>{en=!en;b.textContent=en?'ID':'EN';document.documentElement.lang=en?'en':'id';document.querySelectorAll('nav a').forEach((a,i)=>a.textContent=labels[en?'en':'id'][i]);};
+function setLanguage(){
+ const t=translations[en?'en':'id'];
+ document.documentElement.lang=en?'en':'id';
+ b.textContent=en?'ID':'EN';
+ document.querySelectorAll('nav a').forEach((a,i)=>a.textContent=t.nav[i]);
+ Object.entries(t.text).forEach(([selector,value])=>{
+  const el=document.querySelector(selector);if(!el)return;
+  if(selector==='.testimonial-consent'){const input=el.querySelector('input');el.textContent=value;el.prepend(input);return;}
+  el.textContent=value;
+ });
+ document.querySelectorAll('.filter').forEach((el,i)=>el.textContent=t.filters[i]);
+ document.querySelectorAll('.cert-viewer-btn').forEach((el,i)=>el.textContent=t.certButtons[i]);
+ const relation=document.getElementById('testimonial-relation');
+ [...relation.options].forEach((o,i)=>o.textContent=t.relation[i]);
+ document.getElementById('testimonial-name').placeholder=t.placeholders[0];
+ document.getElementById('testimonial-role').placeholder=t.placeholders[1];
+ document.getElementById('testimonial-message').placeholder=t.placeholders[2];
+ document.querySelector('.media-note strong')?.replaceWith(document.createTextNode('images'));
+}
+b.onclick=()=>{en=!en;setLanguage();};
+
+setLanguage();
 
 const galleryGrid=document.getElementById('galleryGrid');
 const galleryEmpty=document.getElementById('galleryEmpty');
