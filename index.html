@@ -116,8 +116,34 @@
 <section id="testimonials">
   <small>06 / TESTIMONI</small>
   <h2>Pengalaman dan kepercayaan.</h2>
-  <p class="gallery-intro">Testimoni dari klien, peserta pelatihan, dan mitra kerja akan ditampilkan di sini.</p>
-  <div class="testimonial-placeholder"><span>TESTIMONI</span><p>Testimoni yang dikirim akan ditinjau terlebih dahulu sebelum ditampilkan di website.</p></div>\n  <div class="testimonial-form-wrap">\n    <h3>Bagikan pengalaman Anda</h3>\n    <p class="form-note">Isi formulir berikut. Testimoni Anda akan dikirim kepada Yudha untuk ditinjau dan tidak langsung dipublikasikan.</p>\n    <form class="testimonial-form" action="https://formsubmit.co/yudhawira@gmail.com" method="POST">\n      <input type="hidden" name="_subject" value="Testimoni baru untuk yudhawira.id">\n      <input type="hidden" name="_template" value="table">\n      <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">\n      <label for="testimonial-name">Nama *</label>\n      <input id="testimonial-name" type="text" name="Nama" placeholder="Nama Anda" maxlength="100" required>\n      <label for="testimonial-role">Jabatan / Organisasi (opsional)</label>\n      <input id="testimonial-role" type="text" name="Jabatan atau organisasi" placeholder="Contoh: HR Manager · PT ABC" maxlength="150">\n      <label for="testimonial-relation">Hubungan dengan Yudha *</label>\n      <select id="testimonial-relation" name="Hubungan" required>\n        <option value="" disabled selected>Pilih salah satu</option>\n        <option>Klien</option><option>Peserta pelatihan</option><option>Rekan kerja</option><option>Mitra kerja</option><option>Lainnya</option>\n      </select>\n      <label for="testimonial-message">Testimoni *</label>\n      <textarea id="testimonial-message" name="Testimoni" rows="5" minlength="10" maxlength="1500" placeholder="Ceritakan pengalaman Anda bekerja atau berkolaborasi dengan Yudha..." required></textarea>\n      <label class="testimonial-consent"><input type="checkbox" name="Persetujuan publikasi" value="Saya menyetujui testimoni ini ditampilkan setelah ditinjau." required> Saya menyetujui testimoni ini ditampilkan di website setelah ditinjau. *</label>\n      <button class="btn" type="submit">Kirim Testimoni</button>\n    </form>\n  </div>
+  <p class="gallery-intro">Testimoni dari klien, peserta pelatihan, dan mitra kerja akan ditampilkan di sini setelah melalui proses moderasi.</p>
+  <div class="testimonial-placeholder"><span>TESTIMONI</span><p>Testimoni yang dikirim akan ditinjau terlebih dahulu sebelum ditampilkan di website.</p></div>
+  <div class="testimonial-invite">
+    <div><strong>Pernah bekerja sama dengan Yudha?</strong><p>Bagikan pengalaman Anda. Cukup isi formulir singkat di bawah ini.</p></div>
+    <a class="btn testimonial-cta" href="#testimonial-form">Tulis Testimoni <span aria-hidden="true">↓</span></a>
+  </div>
+  <div id="testimonial-form" class="testimonial-form-wrap">
+    <h3>Bagikan pengalaman Anda</h3>
+    <p class="form-note">Isi formulir berikut. Testimoni Anda akan dikirim kepada Yudha untuk ditinjau dan tidak langsung dipublikasikan.</p>
+    <form class="testimonial-form" action="https://formsubmit.co/yudhawira@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Testimoni baru untuk yudhawira.id">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label for="testimonial-name">Nama *</label>
+      <input id="testimonial-name" type="text" name="Nama" placeholder="Nama Anda" maxlength="100" required>
+      <label for="testimonial-role">Jabatan / Organisasi (opsional)</label>
+      <input id="testimonial-role" type="text" name="Jabatan atau organisasi" placeholder="Contoh: HR Manager · PT ABC" maxlength="150">
+      <label for="testimonial-relation">Hubungan dengan Yudha *</label>
+      <select id="testimonial-relation" name="Hubungan" required>
+        <option value="" disabled selected>Pilih salah satu</option>
+        <option>Klien</option><option>Peserta pelatihan</option><option>Rekan kerja</option><option>Mitra kerja</option><option>Lainnya</option>
+      </select>
+      <label for="testimonial-message">Testimoni *</label>
+      <textarea id="testimonial-message" name="Testimoni" rows="5" minlength="10" maxlength="1500" placeholder="Ceritakan pengalaman Anda bekerja atau berkolaborasi dengan Yudha..." required></textarea>
+      <label class="testimonial-consent"><input type="checkbox" name="Persetujuan publikasi" value="Saya menyetujui testimoni ini ditampilkan setelah ditinjau." required> Saya menyetujui testimoni ini ditampilkan di website setelah ditinjau. *</label>
+      <button class="btn" type="submit">Kirim Testimoni</button>
+    </form>
+  </div>
 </section>
 <section id="contact">
   <small>07 / KONTAK</small>
@@ -145,6 +171,6 @@
   <div class="lightboxInfo"><strong id="lightboxTitle"></strong><span id="lightboxYear"></span></div>
 </div>
 <footer>© 2026 Yudha Wira</footer>
-<script src="script.js?v=20260929a"></script>
+<script src="script.js?v=20260929b"></script>
 </body>
 </html>
