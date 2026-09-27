@@ -135,3 +135,16 @@
 #testimonial-form{scroll-margin-top:100px}
 @media(max-width:600px){.testimonial-invite{align-items:stretch;flex-direction:column;padding:20px}.testimonial-cta{align-self:flex-start}}
 
+
+
+/* CONCEPT 3 BRAND IDENTITY */
+.logo-brand{display:inline-flex;align-items:center;gap:10px;min-width:150px;white-space:nowrap}
+.brand-mark{display:block;width:34px;height:34px;flex:0 0 auto;overflow:visible}
+.mark-shape{fill:#f3f4f6}
+.mark-star{fill:#c8ff63}
+.logo-word{font:500 15px/1 'DM Sans',sans-serif;letter-spacing:.24em;color:#f3f4f6}
+.logo-word .logo-dot,.footer-brand .logo-dot{color:#c8ff63}
+footer{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.footer-brand{display:inline-flex;align-items:center;gap:10px;color:#f3f4f6;text-decoration:none;font:500 13px 'DM Sans',sans-serif;letter-spacing:.22em}
+.footer-brand .brand-mark{width:28px;height:28px}
+@media(max-width:800px){.logo-brand{min-width:0;gap:8px}.brand-mark{width:30px;height:30px}.logo-word{font-size:13px;letter-spacing:.18em}footer{flex-wrap:wrap}}
