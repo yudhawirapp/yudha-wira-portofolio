@@ -219,8 +219,8 @@ const certificateViewerClose=document.getElementById('certificateViewerClose');
 document.querySelectorAll('.cert-viewer-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const group=certificateGroups[btn.dataset.certGroup];
-    certificateViewerTitle.textContent=en?group.title:(group.title.replace('Certificates','Sertifikat').replace('Workplacement & Competency','Workplacement & Kompetensi').replace('Trainer & Instructor','Pelatih & Instruktur').replace('Outdoor & Adventure','Outdoor & Petualangan').replace('Other','Lainnya'));
-    certificateViewerContent.innerHTML=group.files.length?group.files.map(([title,file])=>'<article class="certificate-frame"><h3>'+title+'</h3><iframe src="'+file+'" title="'+title+'" loading="lazy"></iframe></article>').join(''):'<p class="cert-note">Belum ada dokumen pada kategori ini.</p>';
+    certificateViewerTitle.textContent=translations[en?'en':'id'].certTitle[btn.dataset.certGroup];
+    certificateViewerContent.innerHTML=group.files.length?group.files.map(([title,file])=>'<article class="certificate-frame"><h3>'+title+'</h3><iframe src="'+file+'" title="'+title+'" loading="lazy"></iframe></article>').join('') :'<p class="cert-note">'+translations[en?'en':'id'].emptyCert+'</p>';
     certificateViewer.classList.add('open');
     certificateViewer.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
