@@ -82,6 +82,14 @@ document.querySelectorAll('.filter').forEach(btn=>{
   });
 });
 
+document.querySelectorAll('.project-gallery-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const filter=document.querySelector('.filter[data-filter="'+btn.dataset.projectFilter+'"]');
+    if(filter) filter.click();
+    document.getElementById('gallery').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+
 const lightbox=document.getElementById('lightbox');
 const lbImg=document.getElementById('lightboxImage');
 const lbTitle=document.getElementById('lightboxTitle');
