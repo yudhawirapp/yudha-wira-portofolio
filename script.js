@@ -20,11 +20,12 @@ const galleryFiles=[
   'training tkpk 2026 (2).jpeg','training tkpk 2026 (3).jpeg','training tkpk 2026 (4).jpeg',
   'training tkpk 2026 (5).jpeg','training tkpk 2026 (6).jpeg','training tkpk 2026 (7).jpeg',
   'training tkpk 2026 (8).jpeg','training tkpk 2026 (9).jpeg',
-  'work-1.jpg','work-2.jpg','work-3.jpg','work-4.jpg','work-5.jpg','work-6.jpg','work-7.jpg','work-8.jpg'
+  'leang pute 2007.jpg','work-1.jpg','work-2.jpg','work-3.jpg','work-4.jpg','work-5.jpg','work-6.jpg','work-7.jpg','work-8.jpg'
 ];
 
 const categoryFor=name=>{
-  const n=name.toLowerCase();
+  const n=name.toLowerCase().replace(/\s+/g,' ').trim();
+  if(n==='leang pute 2007.jpg') return 'adventure';
   if(n.includes('novo')||n.includes('novonordisk')) return null;
   if(n.includes('leang pute')||n.includes('leangpute')||n.includes('lean pute')||n.includes('leanpute')||n.includes('canyon')||n.includes('hikespi')||n.includes('cave')) return 'adventure';
   if(n.includes('giant banner')||n.includes('giantbanner')||n.includes('work-1')) return 'rope';
