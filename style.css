@@ -109,3 +109,16 @@
 .project-card h3{margin:8px 0}
 .project-card .btn{cursor:pointer;border:0;border-radius:0}
 .project-grid{align-items:stretch}
+
+
+/* CONTACT, SOCIALS & TESTIMONIALS */
+.social-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.social-links a{display:inline-block;padding:9px 14px;border:1px solid #29303a;border-radius:999px;color:#f3f4f6;text-decoration:none;font-size:14px}
+.social-links a:hover{border-color:#c8ff63;color:#c8ff63}
+.testimonial-placeholder{margin-top:26px;padding:28px;border:1px dashed #46505d;background:#12161b}
+.testimonial-placeholder span{font-size:11px;letter-spacing:.16em;color:#c8ff63;font-weight:700}
+.testimonial-placeholder p{color:#a3abb5;margin-bottom:0}
+.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:15;display:flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:#25d366;color:#082b16;text-decoration:none;box-shadow:0 8px 28px #0008;font-weight:700}
+.whatsapp-float span{font-size:21px;line-height:1}
+.whatsapp-float:hover{filter:brightness(1.06);transform:translateY(-2px)}
+@media(max-width:800px){.social-links{gap:8px}.whatsapp-float{right:16px;bottom:16px;padding:12px 15px}.testimonial-placeholder{padding:20px}}
