@@ -159,3 +159,15 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:18px}
 @media(max-width:800px){.testimonial-form-wrap{padding:20px 4%}.testimonial-form-panel{padding:24px 16px}}
 
 .testimonial-form-wrap[hidden]{display:none!important}
+
+
+/* ICON-ONLY SOCIAL LINKS */
+.social-links{align-items:center;gap:12px}
+.social-links .social-icon{width:46px;height:46px;padding:10px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #29303a;border-radius:50%;color:#f3f4f6;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.social-icon svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.social-icon .icon-fill{fill:currentColor;stroke:none}
+.social-icon:hover{transform:translateY(-3px);border-color:#c8ff63;background:#171d23;color:#c8ff63}
+.whatsapp-float{width:54px;height:54px;padding:13px;justify-content:center}
+.whatsapp-float svg{width:29px;height:29px;display:block;fill:currentColor}
+.whatsapp-float:hover{filter:brightness(1.06);transform:translateY(-2px)}
+@media(max-width:800px){.social-links .social-icon{width:44px;height:44px}.whatsapp-float{width:52px;height:52px;padding:12px}}
