@@ -171,3 +171,13 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .whatsapp-float svg{width:29px;height:29px;display:block;fill:currentColor}
 .whatsapp-float:hover{filter:brightness(1.06);transform:translateY(-2px)}
 @media(max-width:800px){.social-links .social-icon{width:44px;height:44px}.whatsapp-float{width:52px;height:52px;padding:12px}}
+
+
+/* FLOATING SOCIAL RAIL */
+.social-links{position:fixed;right:24px;bottom:92px;z-index:14;display:flex;flex-direction:column;flex-wrap:nowrap;gap:10px;margin:0;padding:9px;background:#0f1318eF;border:1px solid #29303a;border-radius:999px;box-shadow:0 8px 28px #0008;backdrop-filter:blur(10px)}
+.social-links .social-icon{width:40px;height:40px;padding:8px;background:#151a20;border-color:#35404b}
+.social-links .social-icon svg{width:22px;height:22px}
+.social-links .social-icon:hover{transform:translateX(-3px);border-color:#c8ff63;background:#202830;color:#c8ff63}
+.whatsapp-float{right:24px;bottom:24px;z-index:15}
+@media(max-width:800px){.social-links{right:16px;bottom:80px;gap:7px;padding:7px}.social-links .social-icon{width:36px;height:36px;padding:7px}.social-links .social-icon svg{width:20px;height:20px}.whatsapp-float{right:16px;bottom:16px}}
+@media(prefers-reduced-motion:reduce){.social-links .social-icon{transition:none}}
