@@ -25,7 +25,7 @@ const galleryFiles=[
 
 const categoryFor=name=>{
   const n=name.toLowerCase().replace(/\s+/g,' ').trim();
-  if(n==='leang pute 2007.jpg') return 'adventure';
+  if(n==='leang pute 2007.jpg' || n.startsWith('img')) return 'adventure';
   if(n.includes('novo')||n.includes('novonordisk')) return null;
   if(n.includes('leang pute')||n.includes('leangpute')||n.includes('lean pute')||n.includes('leanpute')||n.includes('canyon')||n.includes('hikespi')||n.includes('cave')) return 'adventure';
   if(n.includes('giant banner')||n.includes('giantbanner')||n.includes('work-1')) return 'rope';
