@@ -135,8 +135,3 @@
 #testimonial-form{scroll-margin-top:100px}
 @media(max-width:600px){.testimonial-invite{align-items:stretch;flex-direction:column;padding:20px}.testimonial-cta{align-self:flex-start}}
 
-
-/* HEADER TESTIMONIAL SHORTCUT */
-.header-testimonial-link{display:inline-flex;align-items:center;gap:8px;background:#c8ff63;color:#10130b;text-decoration:none;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;white-space:nowrap;line-height:1.4}
-.header-testimonial-link:hover{filter:brightness(1.06);transform:translateY(-1px)}
-@media(max-width:800px){.header-testimonial-link{font-size:11px;padding:8px 11px;gap:4px}}
