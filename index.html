@@ -57,8 +57,8 @@
     <article><h3>Caving Instructor</h3><p>HIKESPI FINSPAC · 2007</p><a class="btn" href="certificates/professional/instruktur%20hikespi.pdf" target="_blank" rel="noopener">View Certificate</a></article>
     <article><h3>Asesor Kompetensi</h3><p>BNSP · 2016</p><a class="btn" href="certificates/workplace-assessor/wpa%202016.pdf" target="_blank" rel="noopener">View Certificate</a></article>
     <article><h3>Master Trainer</h3><p>BNSP · 2026</p><span class="cert-note">Certificate documentation available in portfolio.</span></article>
-    <article><h3>Workplacement Assessor</h3><p>Workplace Assessor documentation · 2016–2025</p><a class="btn" href="certificates/workplace-assessor/wpa%202016.pdf" target="_blank" rel="noopener">View Certificate</a><div class="cert-more"><a href="#certificates-assessor">View all assessor certificates</a></div></article>
-    <article><h3>Professional Trainer</h3><p>3 sertifikat trainer · 2026</p><a class="btn" href="certificates/trainer/Sertifikat%20Pengajar%20-%20Yudha%20Wira%20PB%20%2827-28%20Agustus%202026%29.pdf" target="_blank" rel="noopener">View Certificate</a><div class="cert-more"><a href="#trainer-certificates">View all 3 certificates</a></div></article>
+    <article><h3>Workplacement Assessor</h3><p>Workplace Assessor documentation · 2016–2025</p><button class="btn cert-viewer-btn" type="button" data-cert-group="assessor">View Certificates</button></article>
+    <article><h3>Professional Trainer</h3><p>3 sertifikat trainer · 2026</p><button class="btn cert-viewer-btn" type="button" data-cert-group="trainer">View Certificates</button></article>
   </div>
 
   <div id="certificates-assessor" class="cert-list">
@@ -122,6 +122,13 @@
   <a class="btn" href="mailto:yudhawira@gmail.com">Kirim Email</a>
 </section>
 </main>
+<div id="certificateViewer" class="certificate-viewer" aria-hidden="true">
+  <div class="certificate-viewer-panel">
+    <button id="certificateViewerClose" class="certificate-viewer-close" aria-label="Tutup">×</button>
+    <h2 id="certificateViewerTitle">Certificates</h2>
+    <div id="certificateViewerContent"></div>
+  </div>
+</div>
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <button id="lightboxClose" aria-label="Tutup">×</button>
   <img id="lightboxImage" src="" alt="">
