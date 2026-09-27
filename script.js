@@ -27,7 +27,7 @@ const categoryFor=name=>{
   const n=name.toLowerCase();
   if(n.includes('novo')||n.includes('novonordisk')) return null;
   if(n.includes('canyon')||n.includes('hikespi')||n.includes('cave')) return 'adventure';
-  if(n.includes('rope')||n.includes('oanc')||n.includes('ghatnas')) return 'rope';
+  if(n.includes('rope')||n.includes('oanc')||n.includes('ghatnas')||n.includes('giant banner')||n.includes('giantbanner')||n.includes('work-1')) return 'rope';
   if(n.includes('training')||n.includes('tkpk')||n.includes('tkbt')) return 'training';
   if(n.includes('cert')||n.includes('kompetensi')||n.includes('sertifikat')) return 'certification';
   if(n.includes('project')||n.includes('bank')||n.includes('work-')) return 'project';
