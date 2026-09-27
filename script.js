@@ -136,17 +136,27 @@ const certificateGroups={
       ['WPA 2019','certificates/workplace-assessor/rcc%20wpa%202019.pdf'],
       ['WPA 2022','certificates/workplace-assessor/rcc%20wpa%202022.pdf'],
       ['WPA 2025','certificates/workplace-assessor/rcc%20wpa%202025.pdf'],
+      ['Asesor Kompetensi · BNSP · 2016','certificates/workplace-assessor/wpa%202016.pdf'],
       ['Kompetensi Guiding Level 3','certificates/professional/kompetensi%20guiding%20level%203.pdf']
     ]
   },
-  other:{
-    title:'Other Certificates',
+  trainer:{
+    title:'Trainer & Instructor · Certificates',
     files:[
-      ['Instruktur HIKESPI','certificates/professional/instruktur%20hikespi.pdf'],
       ['Pengawasan K3 Bekerja di Ketinggian · 2026','certificates/trainer/Sertifikat%20Pengajar%20-%20Yudha%20Wira%20PB%20%2827-28%20Agustus%202026%29.pdf'],
       ['Sertifikasi TKBT Tingkat 2 · SKM · 2026','certificates/trainer/YUDHA%20WIRA%20PRATAMA%20PRIBADI%20-%20Sertifikasi%20TKBT%20Tingkat%202.pdf'],
       ['Narasumber TKBT Tingkat 2 · Midiatama · 2026','certificates/trainer/sertifikat%20midiatama.pdf']
     ]
+  },
+  outdoor:{
+    title:'Outdoor & Adventure · Certificates',
+    files:[
+      ['Instruktur HIKESPI','certificates/professional/instruktur%20hikespi.pdf']
+    ]
+  },
+  other:{
+    title:'Other Certificates',
+    files:[]
   }
 };
 const certificateViewer=document.getElementById('certificateViewer');
