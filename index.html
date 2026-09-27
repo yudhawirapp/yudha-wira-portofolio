@@ -93,6 +93,8 @@
 <section id="gallery">
   <small>05 / GALERI</small>
   <h2>25 Years. Many Experiences. One Journey.</h2>
+  <p class="gallery-intro">Kumpulan dokumentasi profesional, training, rope access, adventure, project, dan certification.</p>
+
   <div class="filters" role="tablist" aria-label="Filter galeri">
     <button class="filter active" data-filter="all">ALL</button>
     <button class="filter" data-filter="rope">ROPE ACCESS</button>
@@ -101,20 +103,12 @@
     <button class="filter" data-filter="project">PROJECT</button>
     <button class="filter" data-filter="certification">CERTIFICATION</button>
   </div>
-  <div class="gallery">
-    <button class="media-card" data-category="project" data-title="Professional Portfolio" data-year="2026" data-src="images/work-1.jpg"><img src="images/work-1.jpg" alt="Portfolio documentation 1"><span>Professional Portfolio</span></button>
-    <button class="media-card" data-category="rope" data-title="Rope Access & Technical" data-year="2026" data-src="images/work-2.jpg"><img src="images/work-2.jpg" alt="Rope access documentation"><span>Rope Access & Technical</span></button>
-    <button class="media-card" data-category="rope" data-title="Technical Field Activity" data-year="2026" data-src="images/work-3.jpg"><img src="images/work-3.jpg" alt="Technical field activity"><span>Technical Field Activity</span></button>
-    <button class="media-card" data-category="adventure" data-title="Canyoning & Outdoor" data-year="2024" data-src="images/work-4.jpg"><img src="images/work-4.jpg" alt="Canyoning and outdoor activity"><span>Canyoning & Outdoor</span></button>
-    <button class="media-card" data-category="adventure" data-title="Adventure Experience" data-year="2024" data-src="images/work-5.jpg"><img src="images/work-5.jpg" alt="Adventure experience"><span>Adventure Experience</span></button>
-    <button class="media-card" data-category="training" data-title="Training & Competency" data-year="2026" data-src="images/work-6.jpg"><img src="images/work-6.jpg" alt="Training and competency documentation"><span>Training & Competency</span></button>
-    <button class="media-card" data-category="training" data-title="Professional Training" data-year="2026" data-src="images/work-7.jpg"><img src="images/work-7.jpg" alt="Professional training documentation"><span>Professional Training</span></button>
-    <button class="media-card" data-category="project" data-title="Field Project Documentation" data-year="2026" data-src="images/work-8.jpg"><img src="images/work-8.jpg" alt="Field project documentation"><span>Field Project Documentation</span></button>
+
+  <div id="galleryGrid" class="gallery" aria-live="polite">
+    <div class="gallery-loading">Memuat foto dari portfolio...</div>
   </div>
-  <button class="media-card" data-category="training" data-title="Rope Access Equipment Preparation" data-year="2023" data-src="images/ghatnas OANC 2023 .JPG"><img src="images/ghatnas OANC 2023 .JPG" alt="Rope access equipment preparation"><span>Rope Access Equipment Preparation</span></button>
-  <button class="media-card" data-category="training" data-title="Rope Access Team Activity" data-year="2023" data-src="images/ghatnas OANC 2023.JPG"><img src="images/ghatnas OANC 2023.JPG" alt="Rope access team activity"><span>Rope Access Team Activity</span></button>
-  <button class="media-card" data-category="certification" data-title="Competency Certification – Tourism Human Resources" data-year="2023" data-src="images/IMG_0078 2.HEIC"><img src="images/IMG_0078 2.HEIC" alt="Competency certification tourism human resources"><span>Competency Certification · Surabaya</span></button>
-  <div class="media-note">Foto, video, dan dokumen sertifikasi akan ditempatkan dalam struktur portfolio yang sama sehingga setiap pengalaman dapat dibuka dan dilihat detailnya.</div>
+  <div id="galleryEmpty" class="gallery-empty" hidden>Tidak ada foto untuk kategori ini.</div>
+  <div class="media-note">Foto diambil langsung dari folder <strong>images</strong> di repository GitHub. File asli tidak dipindahkan atau diubah namanya.</div>
 </section>
 <section id="contact">
   <small>06 / KONTAK</small>
