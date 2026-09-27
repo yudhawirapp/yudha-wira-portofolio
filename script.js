@@ -136,7 +136,6 @@ const certificateGroups={
       ['WPA 2019','certificates/workplace-assessor/rcc%20wpa%202019.pdf'],
       ['WPA 2022','certificates/workplace-assessor/rcc%20wpa%202022.pdf'],
       ['WPA 2025','certificates/workplace-assessor/rcc%20wpa%202025.pdf'],
-      ['Asesor Kompetensi · BNSP · 2016','certificates/workplace-assessor/wpa%202016.pdf'],
       ['Kompetensi Guiding Level 3','certificates/professional/kompetensi%20guiding%20level%203.pdf']
     ]
   },
@@ -167,7 +166,7 @@ document.querySelectorAll('.cert-viewer-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const group=certificateGroups[btn.dataset.certGroup];
     certificateViewerTitle.textContent=group.title;
-    certificateViewerContent.innerHTML=group.files.map(([title,file])=>'<article class="certificate-frame"><h3>'+title+'</h3><iframe src="'+file+'" title="'+title+'" loading="lazy"></iframe></article>').join('');
+    certificateViewerContent.innerHTML=group.files.length?group.files.map(([title,file])=>'<article class="certificate-frame"><h3>'+title+'</h3><iframe src="'+file+'" title="'+title+'" loading="lazy"></iframe></article>').join(''):'<p class="cert-note">Belum ada dokumen pada kategori ini.</p>';
     certificateViewer.classList.add('open');
     certificateViewer.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
