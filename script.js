@@ -50,6 +50,13 @@ function setLanguage(){
 b.addEventListener('click',()=>{en=!en;setLanguage();});
 setLanguage();
 
+const testimonialFormModal=document.getElementById('testimonial-form');
+const openTestimonialForm=()=>{testimonialFormModal.classList.add('open');testimonialFormModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('testimonial-name').focus();};
+const closeTestimonialForm=()=>{testimonialFormModal.classList.remove('open');testimonialFormModal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+document.getElementById('openTestimonialForm').addEventListener('click',openTestimonialForm);
+document.getElementById('closeTestimonialForm').addEventListener('click',closeTestimonialForm);
+testimonialFormModal.addEventListener('click',e=>{if(e.target===testimonialFormModal)closeTestimonialForm();});
+
 const galleryGrid=document.getElementById('galleryGrid');
 const galleryEmpty=document.getElementById('galleryEmpty');
 const galleryRepoApi='https://api.github.com/repos/yudhawirapp/yudha-wira-portofolio/contents/images?ref=main';
@@ -165,7 +172,7 @@ const close=()=>{
 };
 document.getElementById('lightboxClose').onclick=close;
 lightbox.addEventListener('click',e=>{if(e.target===lightbox)close();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();closeTestimonialForm();}});
 
 fetch(galleryRepoApi)
   .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub API error')))
