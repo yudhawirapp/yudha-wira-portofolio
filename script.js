@@ -28,7 +28,8 @@ const categoryFor=name=>{
   if(n==='leang pute 2007.jpg' || n.startsWith('img')) return 'adventure';
   if(n.includes('novo')||n.includes('novonordisk')) return null;
   if(n.includes('leang pute')||n.includes('leangpute')||n.includes('lean pute')||n.includes('leanpute')||n.includes('canyon')||n.includes('hikespi')||n.includes('cave')) return 'adventure';
-  if(n.includes('giant banner')||n.includes('giantbanner')||n.includes('work-1')) return 'rope';
+  if(n==='work-1.jpg') return 'training';
+  if(n.includes('giant banner')||n.includes('giantbanner')) return 'rope';
   if(n.includes('oanc')||n.includes('ghatnas')) return 'training';
   if(n.includes('training')||n.includes('tkpk')||n.includes('tkbt')) return 'training';
   if(n.includes('cert')||n.includes('kompetensi')||n.includes('sertifikat')) return 'certification';
