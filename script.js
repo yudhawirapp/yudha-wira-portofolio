@@ -81,7 +81,7 @@ const categoryFor=name=>{
   if(n.includes('novo')||n.includes('novonordisk')) return null;
   if(n.includes('leang pute')||n.includes('leangpute')||n.includes('lean pute')||n.includes('leanpute')||n.includes('canyon')||n.includes('hikespi')||n.includes('cave')) return 'adventure';
   if(n==='work-1.jpg') return 'training';
-  if(n.includes('giant banner')||n.includes('giantbanner')) return 'rope';
+  if(n.includes('giant banner')||n.includes('giantbanner')||n.includes('ascending')||n.includes('descendeur')||n.includes('descender')) return 'rope';
   if(n.includes('oanc')||n.includes('ghatnas')) return 'training';
   if(n.includes('training')||n.includes('tkpk')||n.includes('tkbt')) return 'training';
   if(n.includes('cert')||n.includes('sertifikasi')||n.includes('kompetensi')||n.includes('sertifikat')) return 'certification';
@@ -99,6 +99,8 @@ const yearFor=name=>{
   return m?m[0]:'Portfolio';
 };
 
+const isVideoFile=name=>/\.(mp4|webm|m4v|mov)$/i.test(name);
+
 const buildGallery=files=>{
   galleryGrid.innerHTML='';
   const usable=files.filter(f=>categoryFor(f.name));
@@ -110,13 +112,18 @@ const buildGallery=files=>{
     card.dataset.title=titleFor(file.name);
     card.dataset.year=yearFor(file.name);
     card.dataset.src='images/'+encodeURIComponent(file.name).replace(/%2F/g,'/');
-    card.innerHTML='<img loading="lazy" src="'+card.dataset.src+'" alt="'+card.dataset.title+'"><span>'+card.dataset.title+'</span>';
+    card.dataset.mediaType=isVideoFile(file.name)?'video':'image';
+    if(card.dataset.mediaType==='video'){
+      card.innerHTML='<video muted playsinline preload="metadata" aria-label="'+card.dataset.title+'"></video><span>'+card.dataset.title+'</span>';
+      card.querySelector('video').src=card.dataset.src;
+    }else{
+      card.innerHTML='<img loading="lazy" src="'+card.dataset.src+'" alt="'+card.dataset.title+'"><span>'+card.dataset.title+'</span>';
+    }
     galleryGrid.appendChild(card);
   });
   bindGalleryCards();
   applyGalleryFilter(document.querySelector('.filter.active')?.dataset.filter||'all');
 };
-
 const applyGalleryFilter=filter=>{
   let visible=0;
   galleryGrid.querySelectorAll('.media-card').forEach(card=>{
@@ -145,12 +152,21 @@ document.querySelectorAll('.project-gallery-btn').forEach(btn=>{
 
 const lightbox=document.getElementById('lightbox');
 const lbImg=document.getElementById('lightboxImage');
+const lbVideo=document.getElementById('lightboxVideo');
 const lbTitle=document.getElementById('lightboxTitle');
 const lbYear=document.getElementById('lightboxYear');
 
 const openLightbox=card=>{
-  lbImg.src=card.dataset.src;
-  lbImg.alt=card.dataset.title;
+  lbImg.hidden=card.dataset.mediaType==='video';
+  lbVideo.hidden=card.dataset.mediaType!=='video';
+  if(card.dataset.mediaType==='video'){
+    lbVideo.src=card.dataset.src;
+    lbVideo.load();
+    lbVideo.play().catch(()=>{});
+  }else{
+    lbImg.src=card.dataset.src;
+    lbImg.alt=card.dataset.title;
+  }
   lbTitle.textContent=card.dataset.title;
   lbYear.textContent=card.dataset.year||'';
   lightbox.classList.add('open');
@@ -168,6 +184,9 @@ const close=()=>{
   lightbox.classList.remove('open');
   lightbox.setAttribute('aria-hidden','true');
   lbImg.src='';
+  lbVideo.pause();
+  lbVideo.removeAttribute('src');
+  lbVideo.load();
   document.body.style.overflow='';
 };
 document.getElementById('lightboxClose').onclick=close;
@@ -177,7 +196,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();closeTestim
 fetch(galleryRepoApi)
   .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub API error')))
   .then(items=>{
-    const apiFiles=items.filter(x=>x.type==='file'&&/\.(jpe?g|png|webp)$/i.test(x.name));
+    const apiFiles=items.filter(x=>x.type==='file'&&/\.(jpe?g|png|webp|mp4|webm|m4v|mov)$/i.test(x.name));
     const names=new Set(apiFiles.map(x=>x.name));
     const files=galleryFiles.map(name=>({name})).filter(x=>names.has(x.name));
     const extras=apiFiles.filter(x=>!galleryFiles.includes(x.name));
