@@ -186,3 +186,13 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .media-card:hover video{transform:scale(1.04)}
 .lightbox video{max-width:min(1100px,100%);max-height:78vh;width:auto;height:auto;object-fit:contain;border:1px solid #29303a;box-shadow:0 20px 70px #000}
 @media(max-width:800px){.gallery .media-card video{height:250px}.lightbox video{max-height:72vh;max-width:100%}}
+
+
+/* PUBLISHED TESTIMONIALS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.testimonial-card{display:flex;flex-direction:column;justify-content:space-between;min-height:210px;padding:24px;background:#12161b;border:1px solid #29303a;border-top:2px solid #c8ff63}
+.testimonial-card blockquote{margin:0 0 24px;color:#f3f4f6;font-size:16px;line-height:1.8}
+.testimonial-author{display:flex;flex-direction:column;gap:3px;padding-top:14px;border-top:1px solid #29303a}
+.testimonial-author strong{font:700 15px 'Space Grotesk';color:#c8ff63}
+.testimonial-author span{font-size:12px;color:#a3abb5}
+@media(max-width:800px){.testimonials-grid{grid-template-columns:1fr}.testimonial-card{min-height:0}}
