@@ -196,3 +196,27 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .testimonial-author strong{font:700 15px 'Space Grotesk';color:#c8ff63}
 .testimonial-author span{font-size:12px;color:#a3abb5}
 @media(max-width:800px){.testimonials-grid{grid-template-columns:1fr}.testimonial-card{min-height:0}}
+
+/* FEATURED TESTIMONIAL CAROUSEL */
+#featured-testimonials{padding-top:70px;padding-bottom:70px}
+.featured-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}
+.featured-heading h2{margin:8px 0;font:700 clamp(28px,4vw,42px)/1.15 'Space Grotesk';letter-spacing:-1px}
+.featured-heading .gallery-intro{margin:0}
+.featured-all{color:#c8ff63;text-decoration:none;font-size:13px;white-space:nowrap}
+.featured-all:hover{text-decoration:underline}
+.featured-carousel{position:relative;min-height:220px;background:linear-gradient(135deg,#151a20,#101318);border:1px solid #29303a;border-top:2px solid #c8ff63;padding:32px 36px;display:grid;align-items:center}
+.featured-slide{display:none;animation:featuredFade .45s ease}
+.featured-slide.active{display:block}
+.featured-slide blockquote{max-width:850px;margin:0 0 24px;font:500 clamp(19px,2.6vw,27px)/1.55 'DM Sans',sans-serif;color:#f3f4f6}
+.featured-author{display:flex;flex-direction:column;gap:2px;border-top:1px solid #29303a;padding-top:14px}
+.featured-author strong{font:700 15px 'Space Grotesk';color:#c8ff63}
+.featured-author span{font-size:12px;color:#a3abb5}
+.featured-controls{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.featured-dots,.featured-arrows{display:flex;align-items:center;gap:9px}
+.featured-dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#526171;cursor:pointer}
+.featured-dot.active{width:24px;border-radius:8px;background:#c8ff63}
+.featured-arrows button{width:36px;height:36px;padding:0;border:1px solid #35404b;border-radius:50%;font-size:23px;line-height:1;cursor:pointer}
+.featured-arrows button:hover{border-color:#c8ff63;color:#c8ff63}
+@keyframes featuredFade{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){#featured-testimonials{padding-top:55px;padding-bottom:55px}.featured-heading{align-items:start;flex-direction:column;gap:10px}.featured-carousel{min-height:250px;padding:24px 20px}.featured-slide blockquote{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.featured-slide.active{animation:none}}
