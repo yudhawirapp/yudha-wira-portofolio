@@ -21,9 +21,11 @@ const translations={
  '#contact small':'07 / CONTACT','#contact h2':'Let’s connect for opportunities, collaboration, and future projects.','#contact>.btn':'Send Email'
  },filters:['ALL','ROPE ACCESS','TRAINING','ADVENTURE','PROJECT','CERTIFICATION'],relation:['Select one','Client','Trainee','Colleague','Business partner','Other'],placeholders:['Your name','e.g., HR Manager · ABC Company','Tell us about your experience working or collaborating with Yudha...'],certButtons:'View Certificates',certTitle:{competency:'Workplacement & Competency · Certificates',trainer:'Trainer & Instructor · Certificates',outdoor:'Outdoor & Adventure · Certificates',other:'Other Certificates'},emptyCert:'No documents in this category yet.',close:'Close'}
 };
+function updateBilingualTestimonials(){document.querySelectorAll('[data-id][data-en]').forEach(el=>{el.textContent=en?el.dataset.en:el.dataset.id;});}
 function setLanguage(){
  const t=translations[en?'en':'id'];
  document.documentElement.lang=en?'en':'id';
+ updateBilingualTestimonials();
  b.textContent=en?'ID':'EN';
  document.querySelectorAll('nav a').forEach((a,i)=>a.textContent=t.nav[i]);
  Object.entries(t.text).forEach(([selector,value])=>{
