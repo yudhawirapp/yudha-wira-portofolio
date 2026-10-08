@@ -63,45 +63,28 @@ const galleryGrid=document.getElementById('galleryGrid');
 const galleryEmpty=document.getElementById('galleryEmpty');
 const galleryRepoApi='https://api.github.com/repos/yudhawirapp/yudha-wira-portofolio/contents/images?ref=main';
 
-const galleryFiles=[
-  'FHM-3213.jpg','FHM-3511.jpg','Hikespi01.jpg','Hikespi02.jpg',
-  'IMG_6887.JPG','IMG_7007.JPG','IMG_7483.HEIC',
-  'canyonign bali 2024.JPG','canyoning bali 2024 .JPG',
-  'ghatnas OANC 2023 .JPG','ghatnas OANC 2023.JPG',
-  'IMG_0078 2.HEIC','IMG_0079 2.HEIC','IMG_0080 2.HEIC','IMG_0081 2.HEIC',
-  'IMG_0083 2.HEIC','IMG_0085 2.HEIC','IMG_0086 2.HEIC','IMG_0087 2.HEIC','IMG_0088 2.HEIC','IMG_0089 2.HEIC',
-  'training tkpk.jpeg','training tkpk 2026.jpeg','training tkpk 2026(1).jpeg',
-  'training tkpk 2026 (2).jpeg','training tkpk 2026 (3).jpeg','training tkpk 2026 (4).jpeg',
-  'training tkpk 2026 (5).jpeg','training tkpk 2026 (6).jpeg','training tkpk 2026 (7).jpeg',
-  'training tkpk 2026 (8).jpeg','training tkpk 2026 (9).jpeg',
-  'leang pute 2007.jpg','work-1.jpg','work-2.jpg','work-3.jpg','work-4.jpg','work-5.jpg','work-6.jpg','work-7.jpg','work-8.jpg'
-];
-
 const categoryFor=name=>{
-  const n=name.toLowerCase().replace(/\s+/g,' ').trim();
-  if(n==='leang pute 2007.jpg' || n.startsWith('img')) return 'adventure';
+  const n=name.toLowerCase().replace(/\\s+/g,' ').trim();
   if(n.includes('novo')||n.includes('novonordisk')) return null;
-  if(n.includes('leang pute')||n.includes('leangpute')||n.includes('lean pute')||n.includes('leanpute')||n.includes('canyon')||n.includes('hikespi')||n.includes('cave')) return 'adventure';
-  if(n==='work-1.jpg') return 'training';
+  if(n.includes('sertifikasi')||n.includes('sertifikat')||n.includes('certificate')||n.includes('kompetensi')) return 'certification';
   if(n.includes('giant banner')||n.includes('giantbanner')||n.includes('ascending')||n.includes('descendeur')||n.includes('descender')) return 'rope';
-  if(n.includes('oanc')||n.includes('ghatnas')) return 'training';
-  if(n.includes('training')||n.includes('tkpk')||n.includes('tkbt')) return 'training';
-  if(n.includes('cert')||n.includes('sertifikasi')||n.includes('kompetensi')||n.includes('sertifikat')) return 'certification';
+  if(n.includes('leang pute')||n.includes('leangpute')||n.includes('canyon')||n.includes('hikespi')||n.includes('cave')||n.startsWith('img_')) return 'adventure';
+  if(n.includes('oanc')||n.includes('ghatnas')||n.includes('training')||n.includes('tkpk')||n.includes('tkbt')||n.includes('cpr')||n.includes('srt')||n.includes('work-1')) return 'training';
   if(n.includes('project')||n.includes('bank')||n.includes('work-')) return 'project';
   return 'project';
 };
 
 const titleFor=name=>{
-  const base=name.replace(/\.[^.]+$/,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim();
-  return base.replace(/\b\w/g,c=>c.toUpperCase());
+  const base=name.replace(/\\.[^.]+$/,'').replace(/[_-]+/g,' ').replace(/\\s+/g,' ').trim();
+  return base.replace(/\\b\\w/g,c=>c.toUpperCase());
 };
 
 const yearFor=name=>{
-  const m=name.match(/20\d{2}/);
+  const m=name.match(/20\\d{2}/);
   return m?m[0]:'Portfolio';
 };
 
-const isVideoFile=name=>/\.(mp4|webm|m4v|mov)$/i.test(name);
+const isVideoFile=name=>/\\.(mp4|webm|m4v|mov)$/i.test(name);
 
 const buildGallery=files=>{
   galleryGrid.innerHTML='';
@@ -198,14 +181,12 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();closeTestim
 fetch(galleryRepoApi)
   .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub API error')))
   .then(items=>{
-    const apiFiles=items.filter(x=>x.type==='file'&&/\.(jpe?g|png|webp|mp4|webm|m4v|mov)$/i.test(x.name));
-    const names=new Set(apiFiles.map(x=>x.name));
-    const files=galleryFiles.map(name=>({name})).filter(x=>names.has(x.name));
-    const extras=apiFiles.filter(x=>!galleryFiles.includes(x.name));
-    buildGallery([...files,...extras]);
+    const apiFiles=items.filter(x=>x.type==='file'&&/\\.(jpe?g|png|webp|mp4|webm|m4v|mov)$/i.test(x.name));
+    buildGallery(apiFiles);
   })
   .catch(()=>{
-    buildGallery(galleryFiles.map(name=>({name})));
+    galleryGrid.innerHTML='';
+    galleryEmpty.hidden=false;
   });
 
 
