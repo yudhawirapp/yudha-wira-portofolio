@@ -178,17 +178,71 @@ document.getElementById('lightboxClose').onclick=close;
 lightbox.addEventListener('click',e=>{if(e.target===lightbox)close();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();closeTestimonialForm();}});
 
-fetch(galleryRepoApi)
-  .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub API error')))
-  .then(items=>{
-    const apiFiles=items.filter(x=>x.type==='file'&&/\.(jpe?g|png|webp|mp4|webm|m4v|mov)$/i.test(x.name));
-    buildGallery(apiFiles);
-  })
-  .catch(()=>{
-    galleryGrid.innerHTML='';
-    galleryEmpty.hidden=false;
-  });
-
+const galleryFileNames=[
+  "DSC01721.JPG",
+  "DSC01733.JPG",
+  "FB_20160110_16_00_38_Saved_Picture.jpg",
+  "FB_20160110_16_00_43_Saved_Picture.jpg",
+  "FB_20160110_16_00_54_Saved_Picture.jpg",
+  "FHM-3213.jpg",
+  "FHM-3511.jpg",
+  "Hikespi01.jpg",
+  "Hikespi02.jpg",
+  "IMG_6887.JPG",
+  "IMG_7007.JPG",
+  "WhatsApp Video 2026-09-23 at 08.38.27.mp4",
+  "canyonign bali 2024.JPG",
+  "canyoning bali 2024 .JPG",
+  "canyoning bali 2024. .JPG",
+  "canyoning bali 2024.JPG",
+  "canyoning4.jpg",
+  "canyoninng 1.JPG",
+  "cara ascending 2026.mp4",
+  "cara menggunakan descendeur.mp4",
+  "ghatnas OANC 2023 .JPG",
+  "ghatnas OANC 2023.JPG",
+  "iam novonordisk 2024.mp4",
+  "leang pute 2007.jpg",
+  "pemasangan giant banner bi.mp4",
+  "project giant banner bi 2026 .jpeg",
+  "project giant banner bi 2026.jpeg",
+  "sertifikasi sby 2.jpg",
+  "sertifikasi sby 3.jpg",
+  "sertifikasi sby 4.jpg",
+  "sertifikasi sby.jpg",
+  "trainin gtkpk (10).jpeg",
+  "training CPR cilegon.JPG",
+  "training SRT morowali 2026.mp4",
+  "training tkpk (1) 2026.jpeg",
+  "training tkpk 2026 (11).jpeg",
+  "training tkpk 2026 (12).jpeg",
+  "training tkpk 2026 (13).jpeg",
+  "training tkpk 2026 (14).jpeg",
+  "training tkpk 2026 (15).jpeg",
+  "training tkpk 2026 (16).jpeg",
+  "training tkpk 2026 (17).jpeg",
+  "training tkpk 2026 (18).jpeg",
+  "training tkpk 2026 (2).jpeg",
+  "training tkpk 2026 (3).jpeg",
+  "training tkpk 2026 (4).jpeg",
+  "training tkpk 2026 (5).jpeg",
+  "training tkpk 2026 (6).jpeg",
+  "training tkpk 2026 (7).jpeg",
+  "training tkpk 2026 (8).jpeg",
+  "training tkpk 2026 (9).jpeg",
+  "training tkpk 2026(1).jpeg",
+  "training tkpk 2026.jpeg",
+  "training tkpk.jpeg",
+  "work-1.jpg",
+  "work-2.jpg",
+  "work-3.jpg",
+  "work-4.jpg",
+  "work-5.jpg",
+  "work-6.jpg",
+  "work-7.jpg",
+  "work-8.jpg"
+];
+buildGallery(galleryFileNames.map(name=>({name})));
 
 const certificateGroups={
   competency:{
