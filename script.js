@@ -64,7 +64,7 @@ const galleryEmpty=document.getElementById('galleryEmpty');
 const galleryRepoApi='https://api.github.com/repos/yudhawirapp/yudha-wira-portofolio/contents/images?ref=main';
 
 const categoryFor=name=>{
-  const n=name.toLowerCase().replace(/\\s+/g,' ').trim();
+  const n=name.toLowerCase().replace(/\s+/g,' ').trim();
   if(n.includes('novo')||n.includes('novonordisk')) return null;
   if(n.includes('sertifikasi')||n.includes('sertifikat')||n.includes('certificate')||n.includes('kompetensi')) return 'certification';
   if(n.includes('giant banner')||n.includes('giantbanner')||n.includes('ascending')||n.includes('descendeur')||n.includes('descender')) return 'rope';
@@ -75,16 +75,16 @@ const categoryFor=name=>{
 };
 
 const titleFor=name=>{
-  const base=name.replace(/\\.[^.]+$/,'').replace(/[_-]+/g,' ').replace(/\\s+/g,' ').trim();
-  return base.replace(/\\b\\w/g,c=>c.toUpperCase());
+  const base=name.replace(/\\.[^.]+$/,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim();
+  return base.replace(/\b\w/g,c=>c.toUpperCase());
 };
 
 const yearFor=name=>{
-  const m=name.match(/20\\d{2}/);
+  const m=name.match(/20\d{2}/);
   return m?m[0]:'Portfolio';
 };
 
-const isVideoFile=name=>/\\.(mp4|webm|m4v|mov)$/i.test(name);
+const isVideoFile=name=>/\.(mp4|webm|m4v|mov)$/i.test(name);
 
 const buildGallery=files=>{
   galleryGrid.innerHTML='';
@@ -181,7 +181,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();closeTestim
 fetch(galleryRepoApi)
   .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub API error')))
   .then(items=>{
-    const apiFiles=items.filter(x=>x.type==='file'&&/\\.(jpe?g|png|webp|mp4|webm|m4v|mov)$/i.test(x.name));
+    const apiFiles=items.filter(x=>x.type==='file'&&/\.(jpe?g|png|webp|mp4|webm|m4v|mov)$/i.test(x.name));
     buildGallery(apiFiles);
   })
   .catch(()=>{
